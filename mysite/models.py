@@ -48,8 +48,8 @@ class M_user(AbstractBaseUser):
 
 class Activity(models.Model):
     member_id = models.ForeignKey(M_user, related_name='activities', on_delete=models.CASCADE)
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    start_time = models.CharField(max_length=100)
+    end_time = models.CharField(max_length=100)
 
 
     def __str__(self):
